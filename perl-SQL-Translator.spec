@@ -5,7 +5,7 @@
 %define realversion 0.08_01
 %define version 0.08.01
 
-%define	rel	2
+%define	rel	3
 %define release %mkrel %{rel}
 
 %define _requires_exceptions perl(Doesnt\\|perl(GD\\|perl(GraphViz\\|perl(IO::File\\|perl(IO::Scalar\\|perl(Spreadsheet::ParseExcel\\|perl(Template\\|perl(Text::ParseWords\\|perl(Text::RecordParser\\|perl(XML::Writer\\|perl(XML::XPath
