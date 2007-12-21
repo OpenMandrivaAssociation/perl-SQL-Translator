@@ -36,6 +36,7 @@ BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More) >= 0.6
 BuildRequires:	perl(YAML) >= 0.39
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 SQL::Translator is a group of Perl modules that converts
