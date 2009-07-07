@@ -4,7 +4,7 @@
 %define _requires_exceptions perl(Doesnt\\|perl(GD\\|perl(GraphViz\\|perl(IO::File\\|perl(IO::Scalar\\|perl(Spreadsheet::ParseExcel\\|perl(Template\\|perl(Text::ParseWords\\|perl(Text::RecordParser\\|perl(XML::Writer\\|perl(XML::XPath
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{version}
+Version:	%perl_convert_version %{upstream_version}
 Release:	%mkrel 1
 
 Summary:	Manipulate structured data definitions (SQL and more)
