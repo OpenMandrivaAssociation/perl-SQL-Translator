@@ -1,42 +1,43 @@
-%define module	SQL-Translator
-%define name	perl-%{module}
-%define	modprefix SQL
-
-%define realversion 0.08_01
-%define version 0.08.01
-
-%define	rel	3
-%define release %mkrel %{rel}
+%define upstream_name	 SQL-Translator
+%define upstream_version 0.09007
 
 %define _requires_exceptions perl(Doesnt\\|perl(GD\\|perl(GraphViz\\|perl(IO::File\\|perl(IO::Scalar\\|perl(Spreadsheet::ParseExcel\\|perl(Template\\|perl(Text::ParseWords\\|perl(Text::RecordParser\\|perl(XML::Writer\\|perl(XML::XPath
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{version}
+Release:	%mkrel 1
+
+Summary:	Manipulate structured data definitions (SQL and more)
 License:	GPL
 Group:		Development/Perl
-Summary:	Manipulate structured data definitions (SQL and more)
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{realversion}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/SQL/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
+BuildRequires:	perl(Carp::Clan)
+BuildRequires:	perl(Class::Accessor::Fast)
 BuildRequires:	perl(Class::Base)
 BuildRequires:	perl(Class::Data::Inheritable) >= 0.02
 BuildRequires:	perl(Class::MakeMethods)
+BuildRequires:	perl(DBI)
+BuildRequires:	perl(Digest::SHA1)
 BuildRequires:	perl(File::Basename)
 BuildRequires:	perl(File::Spec)
+BuildRequires:	perl(File::ShareDir)
 BuildRequires:	perl(IO::Dir)
+BuildRequires:	perl(IO::Scalar)
 BuildRequires:	perl(Log::Log4perl)
-BuildRequires:  perl(Module::Build)
 BuildRequires:	perl(Parse::RecDescent) >= 1.94
 BuildRequires:	perl(Pod::Usage)
 BuildRequires:	perl(Test::Differences)
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More) >= 0.6
+BuildRequires:	perl(XML::Writer)
 BuildRequires:	perl(YAML) >= 0.39
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 SQL::Translator is a group of Perl modules that converts
@@ -54,20 +55,18 @@ UPDATE, DELETE).
 
 
 %prep
-%setup -q -n %{module}-%{realversion}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Build.PL installdirs=vendor destdir=%{buildroot}
-./Build
+%{__perl} Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-## scottk: test disabled until either Template::Toolkit or tests
-## 18, 33 and 34 are fixed
-##./Build test
+%make test
 
 %install
 rm -rf %{buildroot}
-./Build install
+%makeinstall_std
 
 %clean 
 rm -rf %{buildroot}
@@ -76,9 +75,8 @@ rm -rf %{buildroot}
 %defattr(0644,root,root,0755)
 %doc AUTHORS Changes LICENSE README
 %attr(0755,root,root) %{_bindir}/sqlt*
-%{perl_vendorlib}/%{modprefix}
+%{perl_vendorlib}/SQL
 %{perl_vendorlib}/Test
+%{perl_vendorlib}/auto
 %{_mandir}/man*/*
-
-
 
