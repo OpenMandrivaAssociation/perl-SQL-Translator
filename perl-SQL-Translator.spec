@@ -16,6 +16,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
+BuildRequires:	perl(CGI)
 BuildRequires:	perl(Carp::Clan)
 BuildRequires:	perl(Class::Accessor::Fast)
 BuildRequires:	perl(Class::Base)
