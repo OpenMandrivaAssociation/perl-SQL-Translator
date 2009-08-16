@@ -32,6 +32,7 @@ BuildRequires:	perl(IO::Scalar)
 BuildRequires:	perl(Log::Log4perl)
 BuildRequires:	perl(Parse::RecDescent) >= 1.94
 BuildRequires:	perl(Pod::Usage)
+BuildRequires:	perl(Readonly)
 BuildRequires:	perl(Test::Differences)
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More) >= 0.6
