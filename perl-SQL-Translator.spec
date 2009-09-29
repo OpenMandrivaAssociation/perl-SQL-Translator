@@ -1,5 +1,5 @@
 %define upstream_name	 SQL-Translator
-%define upstream_version 0.11002
+%define upstream_version 0.11003
 
 %define _requires_exceptions perl(Doesnt\\|perl(GD\\|perl(GraphViz\\|perl(IO::File\\|perl(IO::Scalar\\|perl(Spreadsheet::ParseExcel\\|perl(Template\\|perl(Text::ParseWords\\|perl(Text::RecordParser\\|perl(XML::Writer\\|perl(XML::XPath
 
