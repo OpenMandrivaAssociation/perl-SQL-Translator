@@ -1,5 +1,5 @@
 %define upstream_name	 SQL-Translator
-%define upstream_version 0.11007
+%define upstream_version 0.11008
 
 %define _requires_exceptions perl(Doesnt\\|perl(GD\\|perl(GraphViz\\|perl(IO::File\\|perl(IO::Scalar\\|perl(Spreadsheet::ParseExcel\\|perl(Template\\|perl(Text::ParseWords\\|perl(Text::RecordParser\\|perl(XML::Writer\\|perl(XML::XPath
 
@@ -13,9 +13,6 @@ Group:		Development/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/SQL/%{upstream_name}-%{upstream_version}.tar.gz
 Url:		http://search.cpan.org/dist/%{upstream_name}
 
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
 BuildRequires:	perl(CGI)
 BuildRequires:	perl(Carp::Clan)
 BuildRequires:	perl(Class::Accessor::Fast)
@@ -30,6 +27,7 @@ BuildRequires:	perl(File::ShareDir)
 BuildRequires:	perl(IO::Dir)
 BuildRequires:	perl(IO::Scalar)
 BuildRequires:	perl(Log::Log4perl)
+BuildRequires:	perl(Moo)
 BuildRequires:	perl(Parse::RecDescent) >= 1.94
 BuildRequires:	perl(Pod::Usage)
 BuildRequires:	perl(Readonly)
