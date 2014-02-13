@@ -1,5 +1,5 @@
 %define upstream_name	 SQL-Translator
-%define upstream_version 0.11008
+%define upstream_version 0.11018
 
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Doesnt(.*)\\)|perl\\(GD(.*)\\)|perl\\(GraphViz(.*)\\)|perl\\(IO::File(.*)\\)|perl\\(IO::Scalar(.*)\\)|perl\\(Spreadsheet::ParseExcel(.*)\\)|perl\\(Template(.*)\\)|perl\\(Text::ParseWords(.*)\\)|perl\\(Text::RecordParser(.*)\\)|perl\\(XML::Writer(.*)\\)|perl\\(XML::XPath(.*)\\)'
@@ -9,12 +9,12 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 
 Summary:	Manipulate structured data definitions (SQL and more)
 License:	GPL
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/SQL/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/SQL/SQL-Translator-%{upstream_version}.tar.gz
 Url:		http://search.cpan.org/dist/%{upstream_name}
 
 BuildRequires:	perl-devel
@@ -151,4 +151,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Sun Aug 06 2006 Scott Karns <scottk@mandriva.org> 0.08.01-1mdv2007.0
 - First Mandriva package
+
 
