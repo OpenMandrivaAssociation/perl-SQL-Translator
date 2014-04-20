@@ -1,2 +1,4 @@
+removed_sources:
+  SQL-Translator-0.11008.tar.gz: d0c338fe002042215071b78e8433a5a28047cd11
 sources:
-  "SQL-Translator-0.11008.tar.gz": d0c338fe002042215071b78e8433a5a28047cd11
+  SQL-Translator-0.11018.tar.gz: ac4163105e5e8d31cf92dabd205cc08fa0ba44f7
