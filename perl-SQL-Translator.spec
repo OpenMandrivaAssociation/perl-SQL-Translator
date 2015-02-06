@@ -9,7 +9,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	4
 
 Summary:	Manipulate structured data definitions (SQL and more)
 License:	GPL
