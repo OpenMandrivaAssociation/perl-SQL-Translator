@@ -15,7 +15,7 @@ Summary:	Manipulate structured data definitions (SQL and more)
 License:	GPL
 Group:		Development/Perl
 Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/SQL/SQL-Translator-%{upstream_version}.tar.gz
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(CGI)
