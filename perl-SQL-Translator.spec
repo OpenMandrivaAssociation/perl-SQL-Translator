@@ -17,6 +17,7 @@ Group:		Development/Perl
 Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/SQL/SQL-Translator-%{upstream_version}.tar.gz
 Url:		https://search.cpan.org/dist/%{upstream_name}
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(CGI)
 BuildRequires:	perl(Carp::Clan)
