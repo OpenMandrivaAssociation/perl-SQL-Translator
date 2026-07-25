@@ -1,5 +1,5 @@
 %define upstream_name	 SQL-Translator
-%define upstream_version 0.11018
+%define upstream_version 1.66
 
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Doesnt(.*)\\)|perl\\(GD(.*)\\)|perl\\(GraphViz(.*)\\)|perl\\(IO::File(.*)\\)|perl\\(IO::Scalar(.*)\\)|perl\\(Spreadsheet::ParseExcel(.*)\\)|perl\\(Template(.*)\\)|perl\\(Text::ParseWords(.*)\\)|perl\\(Text::RecordParser(.*)\\)|perl\\(XML::Writer(.*)\\)|perl\\(XML::XPath(.*)\\)'
@@ -8,14 +8,14 @@
 %endif
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Manipulate structured data definitions (SQL and more)
 License:	GPL
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/SQL/SQL-Translator-%{upstream_version}.tar.gz
-Url:		https://search.cpan.org/dist/%{upstream_name}
+Source0:	https://cpan.metacpan.org/authors/id/V/VE/VEESH/SQL-Translator-%{upstream_version}.tar.gz
+Url:		https://github.com/dbsrgits/sql-translator
 
 BuildRequires:	make
 BuildRequires:	perl-devel
